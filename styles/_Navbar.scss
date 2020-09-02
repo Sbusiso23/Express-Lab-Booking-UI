@@ -1,0 +1,36 @@
+nav {
+  width: 5vw;
+  height: 100vh;
+  font-size: 2rem;
+  background: $standard-navbar-background-color;
+
+  ul {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    align-items: center;
+
+    li {
+      background: $standard-navbar-item-background-color;
+      position: relative;
+
+      span {
+        
+      }
+
+      span:first-child {
+        position: absolute;
+      }
+    }
+
+    .active {
+      background: $standard-navbar-active-background-color;
+    }
+
+    .nothing {
+      flex: 1;
+    }
+  }
+}
