@@ -7,11 +7,28 @@
 /***********************************************************************************
                               NAVBAR VARIABLES
 ***********************************************************************************/
+@-webkit-keyframes open-menu {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes open-menu {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 * {
   padding: 0;
   margin: 0;
-  -webkit-box-sizing: 0;
-          box-sizing: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 html {
@@ -23,13 +40,21 @@ body {
   width: 100vw;
   background: #69bac9;
   color: #c5ccd3;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  justify-items: space-between;
 }
 
 nav {
   width: 5vw;
   height: 100vh;
   font-size: 2rem;
-  background: #7e7e9e;
+  background: #2c2c31;
 }
 
 nav ul {
@@ -48,24 +73,172 @@ nav ul {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  z-index: 2;
 }
 
 nav ul li {
-  background: navy;
+  background: 7EE8FA;
   position: relative;
+  height: 7.5vh;
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
 }
 
 nav ul li span:first-child {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  min-width: 10vw;
   position: absolute;
+  -webkit-transform: translateX(-5vh);
+          transform: translateX(-5vh);
+  color: #2c2c31;
+  padding-left: 5vh;
+  opacity: 0;
+  z-index: -4;
+  -webkit-transition: -webkit-transform 0.3s ease-out;
+  transition: -webkit-transform 0.3s ease-out;
+  transition: transform 0.3s ease-out;
+  transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
 }
 
-nav ul .active {
-  background: navy;
+nav ul li span:last-child {
+  -webkit-transition: color 0.2s ease;
+  transition: color 0.2s ease;
+  color: #ecf0f1;
+}
+
+nav ul li:not(.nothing) {
+  cursor: pointer;
+}
+
+nav ul li:not(.nothing):not(.user):hover {
+  width: 30vw;
+  background-origin: left;
+}
+
+nav ul li:not(.nothing):not(.user):hover span:first-child {
+  border: 1px solid black;
+  padding: 1rem 1rem 1rem 3vh;
+  -webkit-transform: translateX(15vh);
+          transform: translateX(15vh);
+  opacity: 1;
+}
+
+nav ul li:not(.nothing):not(.user):hover span:last-child {
+  color: #1d648d;
+}
+
+nav ul .user {
+  height: 10vh;
+  width: 5vw;
+  color: #ecf0f1;
+}
+
+nav ul .user:hover {
+  color: #1d648d;
+}
+
+nav ul .active span:last-child {
+  color: #1d648d;
+}
+
+nav ul .active span:last-child:hover {
+  color: #322fcc;
 }
 
 nav ul .nothing {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
+}
+
+main {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+}
+
+main section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 10%;
+  width: 100%;
+  background: #2c2c31;
+  padding: 0 3vw;
+  color: #ecf0f1;
+}
+
+main section > * {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+main section .logo {
+  cursor: pointer;
+  font-size: 3rem;
+}
+
+main section .logo:hover {
+  color: #1d648d;
+}
+
+main section .social {
+  width: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main section .social i:not(:last-child) {
+  margin-right: 2rem;
+}
+
+main section .social > * {
+  cursor: pointer;
+  -webkit-transition: color 0.2s ease;
+  transition: color 0.2s ease;
+  color: #ecf0f1;
+}
+
+main section .social > *:hover {
+  color: #1d648d;
+}
+
+main section .date {
+  font-size: 2.5rem;
+}
+
+main .timetable {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -ms-grid;
+  display: grid;
 }
 /*# sourceMappingURL=style.css.map */

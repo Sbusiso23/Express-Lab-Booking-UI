@@ -11,22 +11,81 @@ nav {
     flex-flow: column;
     justify-content: space-between;
     align-items: center;
+    z-index: 2;
 
     li {
       background: $standard-navbar-item-background-color;
       position: relative;
+      height: 7.5vh;
+      width: 100%;
+      display: grid;
+      place-items: center;
 
       span {
-        
+        &:first-child {
+          display: flex;
+          flex-wrap: nowrap;
+          min-width: 10vw;
+          position: absolute;
+          transform: translateX(-5vh);
+          color: $standard-navbar-background-color;
+          padding-left: 5vh;
+          opacity: 0;
+          z-index: -4;
+          transition: transform 0.3s ease-out;
+        }
+
+        &:last-child {
+          transition: color 0.2s ease;
+          color: $standard-navbar-text-color;
+          // width: 5vh;
+          // height: 5vh;
+        }
       }
 
-      span:first-child {
-        position: absolute;
+      &:not(.nothing) {
+        cursor: pointer;
+      }
+
+      &:not(.nothing):not(.user):hover {
+        width: 30vw;
+        background-origin: left;
+
+        span {
+          &:first-child {
+            border: 1px solid black;
+            padding: 1rem 1rem 1rem 3vh;
+            //padding-left: 5vh;
+            transform: translateX(15vh);
+            opacity: 1;
+          }
+
+          &:last-child {
+            color: $standard-navbar-active-background-color;
+          }
+        }
       }
     }
 
+    .user {
+      height: 10vh;
+      width: 5vw;
+      color: $standard-navbar-text-color;
+
+      &:hover {
+        color: $standard-navbar-active-background-color;
+      }
+
+    }
+
     .active {
-      background: $standard-navbar-active-background-color;
+      span:last-child {
+        color: $standard-navbar-active-background-color;
+
+        &:hover {
+          color: rgb(50, 47, 204);
+        }
+      }
     }
 
     .nothing {

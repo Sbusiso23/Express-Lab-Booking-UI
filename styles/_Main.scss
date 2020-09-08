@@ -1,0 +1,60 @@
+main {
+  flex: 1;
+  display: flex;
+  flex-flow: column nowrap;
+
+  section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 10%;
+    width: 100%;
+    background: $standard-navbar-background-color;
+    padding: 0 3vw;
+    color: $standard-navbar-text-color;
+
+    & > * {
+      flex: 1;
+    }
+
+    .logo {
+      cursor: pointer;
+      font-size: 3rem;
+
+      &:hover {
+        color: $standard-navbar-active-background-color;
+      }
+    }
+
+    .social {
+      width: 40%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      i:not(:last-child) {
+        margin-right: 2rem;
+      }
+
+      & > * {
+        cursor: pointer;
+        transition: color 0.2s ease;
+        color: $standard-navbar-text-color;
+
+        &:hover {
+          color: $standard-navbar-active-background-color;
+        }
+      }
+    }
+
+    .date {
+      font-size: 2.5rem;
+    }
+  }
+
+  .timetable {
+    flex: 1;
+    display: grid;
+    
+  }
+}
