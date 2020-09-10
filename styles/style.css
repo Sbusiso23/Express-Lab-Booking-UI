@@ -7,20 +7,32 @@
 /***********************************************************************************
                               NAVBAR VARIABLES
 ***********************************************************************************/
-@-webkit-keyframes open-menu {
+@-webkit-keyframes changeZIndex {
   0% {
-    opacity: 0;
+    z-index: -4;
+  }
+  50% {
+    z-index: 0;
+  }
+  75% {
+    z-index: 0;
   }
   100% {
-    opacity: 1;
+    z-index: 0;
   }
 }
-@keyframes open-menu {
+@keyframes changeZIndex {
   0% {
-    opacity: 0;
+    z-index: -4;
+  }
+  50% {
+    z-index: 0;
+  }
+  75% {
+    z-index: 0;
   }
   100% {
-    opacity: 1;
+    z-index: 0;
   }
 }
 
@@ -118,15 +130,15 @@ nav ul li:not(.nothing) {
 
 nav ul li:not(.nothing):not(.user):hover {
   width: 30vw;
-  background-origin: left;
 }
 
 nav ul li:not(.nothing):not(.user):hover span:first-child {
-  border: 1px solid black;
   padding: 1rem 1rem 1rem 3vh;
   -webkit-transform: translateX(15vh);
           transform: translateX(15vh);
   opacity: 1;
+  color: #ecf0f1;
+  background: #2c2c31;
 }
 
 nav ul li:not(.nothing):not(.user):hover span:last-child {
@@ -137,6 +149,7 @@ nav ul .user {
   height: 10vh;
   width: 5vw;
   color: #ecf0f1;
+  position: relative;
 }
 
 nav ul .user:hover {
@@ -184,6 +197,7 @@ main section {
   width: 100%;
   background: #2c2c31;
   padding: 0 3vw;
+  margin-bottom: 3vh;
   color: #ecf0f1;
 }
 
@@ -215,7 +229,7 @@ main section .social {
           align-items: center;
 }
 
-main section .social i:not(:last-child) {
+main section .social a:not(:last-child) {
   margin-right: 2rem;
 }
 
@@ -235,10 +249,154 @@ main section .date {
 }
 
 main .timetable {
+  color: black;
+  z-index: -6;
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
   display: -ms-grid;
   display: grid;
+  border: 1px solid black;
+  margin: 3vh;
+  margin-top: 0;
+  padding: 0.5vh;
+  -ms-grid-columns: 5vw (1fr)[5];
+      grid-template-columns: 5vw repeat(5, 1fr);
+  -ms-grid-rows: 10vh 3vh 1fr;
+      grid-template-rows: 10vh 3vh 1fr;
+      grid-template-areas: "header header header header header header" "days days days days days days" "period monday tuesday wednesday thursday friday";
+}
+
+main .timetable > *:not(.days) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+main .timetable .header, main .timetable .period {
+  background: #24b916;
+}
+
+main .timetable .header {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 6;
+  grid-area: header;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border: 1px solid black;
+}
+
+main .timetable .header p:nth-of-type(1) {
+  font-weight: 900;
+  font-size: 3rem;
+}
+
+main .timetable .header p:nth-of-type(2) {
+  font-weight: 500;
+  font-size: 2rem;
+}
+
+main .timetable .days {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 6;
+  grid-area: days;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+main .timetable .days p {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  border: 1px solid black;
+  font-weight: 500;
+  background: #24b916;
+}
+
+main .timetable .days p:not(:nth-of-type(1)) {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+main .timetable .days p:nth-of-type(1) {
+  width: 5vw;
+}
+
+main .timetable .period {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: period;
+}
+
+main .timetable .period .time {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  border: 1px solid black;
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+main .timetable .monday {
+  -ms-grid-row: 3;
+  -ms-grid-column: 2;
+  grid-area: monday;
+}
+
+main .timetable .tuesday {
+  -ms-grid-row: 3;
+  -ms-grid-column: 3;
+  grid-area: tuesday;
+}
+
+main .timetable .wednesday {
+  -ms-grid-row: 3;
+  -ms-grid-column: 4;
+  grid-area: wednesday;
+}
+
+main .timetable .thursday {
+  -ms-grid-row: 3;
+  -ms-grid-column: 5;
+  grid-area: thursday;
+}
+
+main .timetable .friday {
+  -ms-grid-row: 3;
+  -ms-grid-column: 6;
+  grid-area: friday;
+}
+
+main .timetable .monday .day, main .timetable .tuesday .day, main .timetable .wednesday .day, main .timetable .thursday .day, main .timetable .friday .day {
+  border: 1px solid black;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  background: white;
+}
+
+main .timetable > *:not(.days):not(.header) {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 /*# sourceMappingURL=style.css.map */

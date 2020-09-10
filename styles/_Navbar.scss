@@ -49,15 +49,16 @@ nav {
 
       &:not(.nothing):not(.user):hover {
         width: 30vw;
-        background-origin: left;
+        //background-origin: left;
 
         span {
           &:first-child {
-            border: 1px solid black;
             padding: 1rem 1rem 1rem 3vh;
             //padding-left: 5vh;
             transform: translateX(15vh);
             opacity: 1;
+            color: $standard-navbar-text-color;
+            background: $standard-navbar-background-color;
           }
 
           &:last-child {
@@ -71,11 +72,11 @@ nav {
       height: 10vh;
       width: 5vw;
       color: $standard-navbar-text-color;
+      position: relative;
 
       &:hover {
         color: $standard-navbar-active-background-color;
       }
-
     }
 
     .active {

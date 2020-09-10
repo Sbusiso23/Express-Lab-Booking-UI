@@ -10,7 +10,7 @@
 <body>
   <nav>
     <ul>
-			<li class="user">
+			<li class="user" title="user">
 				<i class="fas fa-user fa-2x"></i>
 			</li>
       <li class="active">
@@ -19,7 +19,7 @@
       </li>
       <li>
 				<span>BOOK LAB</span>
-        <span><i class='fas fa-home'></i> </span>
+        <span><i class="fas fa-compass"></i></span>
 			</li>
       <li>
 				<span>VIEW LABS</span>
@@ -29,7 +29,11 @@
 				<span>SOMETHING</span>
         <span><i class='fas fa-home'></i> </span>
 			</li>
-      <li class="nothing"></li>
+			<li class="nothing"></li>
+			<li>
+				<span>SIGN OUT</span>
+				<span><i class="fas fa-sign-out-alt"></i></span>
+			</li>
       <li>
 				<span>ADMIN</span>
         <span><i class="fas fa-user-cog"></i></span>
@@ -40,14 +44,118 @@
 		<section>
 			<h3 class="logo">express</h3>
 			<div class="social">
-				<i class="fab fa-facebook-square fa-2x"></i>
-				<i class="fab fa-instagram-square fa-2x"></i>
-				<i class="fab fa-twitter-square fa-2x"></i>
+				<a href=""><i class="fab fa-facebook-square fa-2x"></i></a>
+				<a href=""><i class="fab fa-instagram-square fa-2x"></i></a>
+				<a href=""><i class="fab fa-twitter-square fa-2x"></i></a>
 			</div>
 			<div class="date"></div>
 		</section>
 		<div class="timetable">
-			
+			<div class="header">
+				<P>BSC III</P>
+				<p>TIMETABLE & LECTURE HALLS - 2020</p>
+			</div>
+
+			<!-- //slot days -->
+			<div class="days">
+				<p>PERIOD</p>
+				<p>MONDAY</p>
+				<p>TUESDAY</p>
+				<p>WEDNESDAY</p>
+				<p>THURSDAY</p>
+				<p>FRIDAY</p>
+			</div>
+
+			<!-- //slots -->
+			<div class="period">
+				<div class="time">07:45 - 08:25</div>
+				<div class="time">08:30 - 09:10</div>
+				<div class="time">09:15 - 09:55</div>
+				<div class="time">10:00 - 10:40</div>
+				<div class="time">10:45 - 11:25</div>
+				<div class="time">11:30 - 12:10</div>
+				<div class="time">12:15 - 12:55</div>
+				<div class="time">13:00 - 13:55</div>
+				<div class="time">14:00 - 14:40</div>
+				<div class="time">14:45 - 15:25</div>
+				<div class="time">15:30 - 16:10</div>
+				<div class="time">16:15 - 16:55</div>
+			</div>
+
+			<div class="monday">
+				<div class="day day1">computer sciences 1</div>
+				<div class="day day1">computer sciences 2</div>
+				<div class="day day1">computer sciences 3</div>
+				<div class="day day1">computer sciences 4</div>
+				<div class="day day1">computer sciences 5</div>
+				<div class="day day1">computer sciences 6</div>
+				<div class="day day1">computer sciences 7</div>
+				<div class="day day1">computer sciences 8</div>
+				<div class="day day1">computer sciences 9</div>
+				<div class="day day1">computer sciences 10</div>
+				<div class="day day1">computer sciences 11</div>
+				<div class="day day1">computer sciences 12</div>
+			</div>
+
+			<div class="tuesday">
+				<div class="day day2">computer sciences 1</div>
+				<div class="day day2">computer sciences 2</div>
+				<div class="day day2">computer sciences 3</div>
+				<div class="day day2">computer sciences 4</div>
+				<div class="day day2">computer sciences 5</div>
+				<div class="day day2">computer sciences 6</div>
+				<div class="day day2">computer sciences 7</div>
+				<div class="day day2">computer sciences 8</div>
+				<div class="day day2">computer sciences 9</div>
+				<div class="day day2">computer sciences 10</div>
+				<div class="day day2">computer sciences 11</div>
+				<div class="day day2">computer sciences 12</div>
+			</div>
+
+			<div class="wednesday">
+				<div class="day day3">computer sciences 1</div>
+				<div class="day day3">computer sciences 2</div>
+				<div class="day day3">computer sciences 3</div>
+				<div class="day day3">computer sciences 4</div>
+				<div class="day day3">computer sciences 5</div>
+				<div class="day day3">computer sciences 6</div>
+				<div class="day day3">computer sciences 7</div>
+				<div class="day day3">computer sciences 8</div>
+				<div class="day day3">computer sciences 9</div>
+				<div class="day day3">computer sciences 10</div>
+				<div class="day day3">computer sciences 11</div>
+				<div class="day day3">computer sciences 12</div>
+			</div>
+
+			<div class="thursday">
+				<div class="day day4">computer sciences 1</div>
+				<div class="day day4">computer sciences 2</div>
+				<div class="day day4">computer sciences 3</div>
+				<div class="day day4">computer sciences 4</div>
+				<div class="day day4">computer sciences 5</div>
+				<div class="day day4">computer sciences 6</div>
+				<div class="day day4">computer sciences 7</div>
+				<div class="day day4">computer sciences 8</div>
+				<div class="day day4">computer sciences 9</div>
+				<div class="day day4">computer sciences 10</div>
+				<div class="day day4">computer sciences 11</div>
+				<div class="day day4">computer sciences 12</div>
+			</div>
+
+			<div class="friday">
+				<div class="day day5">computer sciences 1</div>
+				<div class="day day5">computer sciences 2</div>
+				<div class="day day5">computer sciences 3</div>
+				<div class="day day5">computer sciences 4</div>
+				<div class="day day5">computer sciences 5</div>
+				<div class="day day5">computer sciences 6</div>
+				<div class="day day5">computer sciences 7</div>
+				<div class="day day5">computer sciences 8</div>
+				<div class="day day5">computer sciences 9</div>
+				<div class="day day5">computer sciences 10</div>
+				<div class="day day5">computer sciences 11</div>
+				<div class="day day5">computer sciences 12</div>
+			</div>
 		</div>
 	</main>
 

@@ -1,8 +1,14 @@
-@keyframes open-menu {
+@keyframes changeZIndex {
   0% {
-    opacity: 0;
+    z-index: -4;
+  }
+  50% {
+    z-index: 0;
+  }
+  75% {
+    z-index: 0;
   }
   100% {
-    opacity: 1;
+    z-index: 0;
   }
 }
