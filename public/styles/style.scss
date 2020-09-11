@@ -21,5 +21,9 @@ body {
   justify-items: space-between;
 }
 
-@import "./Navbar";
-@import "./Main";
+/*     Import homepage styling       */
+@import "../styles/homepage/Navbar";
+@import "../styles/homepage/Main";
+
+/*     Import login page styling     */
+@import "../styles/login/Main";
